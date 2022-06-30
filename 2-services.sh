@@ -30,7 +30,7 @@ function brLine {
 }
 
 function summary {
-    printf "\\n\\n-------------------- [SUMMARY - servicesCheck] --------------------\\n\\n"
+    printf "\\n\\n-------------------- [SUMMARY - 2. Services] --------------------\\n\\n"
     for (( i = 0; i < ${#titles[@]}; i++ )); do
         printf "%-75s - %s\\n" "${titles[$i]}" "${results[$i]}"
     done
@@ -122,9 +122,13 @@ title="[2.2.1.1 Ensure time synchronization is in use (Not scored, will do) (111
 titles[index++]="$title"
 printf "%s\\n\\n" "$title"
 printf "Verify either ntp or chrony is installed:\\n\\n[OUTPUT]:\\n"
-rpm -q ntp
-rpm -q chrony
-results[index-1]="REQUIRES CHECKING"
+NTP_INSTALLED=$(rpm -q ntp)
+RPM_INSTALLED=$(rpm -q chrony)
+if [[ $NTP_INSTALLED != *"is not installed"* ]] || [[ $RPM_INSTALLED != *"is not installed"* ]]; then
+    results[index-1]="OK"
+else
+    results[index-1]="REQUIRES CHECKING"
+fi
 brLine
 
 # 2.2.1.2 Ensure ntp is configured (Scored)

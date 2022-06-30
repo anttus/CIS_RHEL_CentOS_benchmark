@@ -121,7 +121,7 @@ function passwordMaxDays {
 }
 
 function summary {
-    printf "\\n\\n-------------------- [SUMMARY - accessAuthCheck] --------------------\\n\\n"
+    printf "\\n\\n-------------------- [SUMMARY - 5. Access, authentication and authorization] --------------------\\n\\n"
     for (( i = 0; i < ${#titles[@]}; i++ )); do
         printf "%-75s - %s\\n" "${titles[$i]}" "${results[$i]}"
     done

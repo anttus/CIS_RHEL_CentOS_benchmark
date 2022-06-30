@@ -16,7 +16,7 @@ function brLine {
 }
 
 function summary {
-    printf "\\n\\n-------------------- [SUMMARY - sfPermissionsCheck] --------------------\\n\\n"
+    printf "\\n\\n-------------------- [SUMMARY - 6. System maintenance] --------------------\\n\\n"
     for (( i = 0; i < ${#titles[@]}; i++ )); do
         printf "%-85s - %s\\n" "${titles[$i]}" "${results[$i]}"
     done

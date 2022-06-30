@@ -13,7 +13,7 @@ exec 2>&1
 # Functions ------------->
 
 function summary {
-    printf "\\n\\n-------------------- [SUMMARY - loggingAuditing] --------------------\\n\\n"
+    printf "\\n\\n-------------------- [SUMMARY - 4. Logging and auditig] --------------------\\n\\n"
     for (( i = 0; i < ${#titles[@]}; i++ )); do
         printf "%-93s - %s\\n" "${titles[$i]}" "${results[$i]}"
     done
