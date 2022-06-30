@@ -1,15 +1,13 @@
 #!/bin/bash -
-#title          :sfPermissionsCheck
-#description    :This script does checks on different system file permissions, based on CIS_CentOS_Linux_7_Benchmark_v2.2.0's chapter 6.
+#title          :6. System maintenance
+#description    :This script does checks on different system file permissions, based on CIS CentOS / RHEL 7 benchmark chapter 6
 #author         :Anttu Suhonen
 #date           :20180524
 #version        :1.0
-#usage          :./sfPermissionsCheck
-#notes          :
-#bash_version   :3.2.57(1)-release
+#usage          :./6-system-maintenance.sh
 #============================================================================
 
-exec > /services/data/shared_resources/temp/logs/"$(hostname)"_sfPermissionsCheck_"$(date)".log
+exec > ./results/"$(hostname)"_CIS_system-maintenance_"$(date +%d-%m-%Y)".log
 exec 2>&1
 
 # Functions ------------->

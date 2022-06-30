@@ -1,15 +1,13 @@
 #!/bin/bash -
-#title          :accessAuthCheck
-#description    :This script checks the security of CentOS server's authentication, authorization and access, based on CIS_CentOS_Linux_7_Benchmark_v2.2.0.pdf's chapter 5.
+#title          :5. Access, authentication and authorization
+#description    :This script checks the security of CentOS server's authentication, authorization and access, based on CIS CentOS / RHEL 7 benchmark chapter 5
 #author         :Anttu Suhonen
 #date           :20180604
 #version        :1.0
-#usage          :./accessAuthCheck.sh
-#notes          :
-#bash_version   :3.2.57(1)-release
+#usage          :./5-access-auth.sh
 #============================================================================
 
-exec > /services/data/shared_resources/temp/logs/"$(hostname)"_accessAuthCheck_"$(date)".log
+exec > ./results/"$(hostname)"_CIS_access-auth_"$(date +%d-%m-%Y)".log
 exec 2>&1
 
 # Functions ------------->

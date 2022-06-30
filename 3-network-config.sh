@@ -1,15 +1,13 @@
 #!/bin/bash -
-#title          :networkingConfigCheck
-#description    :This script does checks on different networking configurations, based on CIS_CentOS_Linux_7_Benchmark_v2.2.0's chapter 3.
+#title          :3. Networking configuration
+#description    :This script does checks on different networking configurations, based on CIS CentOS / RHEL 7 benchmark chapter 3
 #author         :Anttu Suhonen
 #date           :20180524
 #version        :1.0
-#usage          :./networkingConfigCheck
-#notes          :
-#bash_version   :3.2.57(1)-release
+#usage          :./3-networking.sh
 #============================================================================
 
-exec > /services/data/shared_resources/temp/logs/"$(hostname)"_networkingConfigCheck_"$(date)".log
+exec > ./results/"$(hostname)"_CIS_networking_"$(date +%d-%m-%Y)".log
 exec 2>&1
 
 # Functions ------------->

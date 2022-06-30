@@ -1,15 +1,13 @@
 #!/bin/bash -
-#title          :loggingAuditing
-#description    :This script checks the security of CentOS server's logging and auditing, based on CIS_CentOS_Linux_7_Benchmark_v2.2.0.pdf's chapter 4.
+#title          :4. Logging and auditig
+#description    :This script checks the security of CentOS server's logging and auditing, based on CIS CentOS / RHEL 7 benchmark chapter 4
 #author         :Anttu Suhonen
 #date           :20180612
 #version        :1.0
-#usage          :./loggingAuditing.sh
-#notes          :
-#bash_version   :3.2.57(1)-release
+#usage          :./4-logging-auditing.sh
 #============================================================================
 
-exec > /services/data/shared_resources/temp/logs/"$(hostname)"_loggingAuditing_"$(date)".log
+exec > ./results/"$(hostname)"_CIS_logging-auditing_"$(date +%d-%m-%Y)".log
 exec 2>&1
 
 # Functions ------------->

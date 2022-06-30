@@ -1,16 +1,14 @@
 #!/bin/bash -
-#title          :servicesCheck
-#description    :This script tests if some services are on/installed, \\nbased on CIS_CentOS_Linux_7_Benchmark_v2.2.0's chapter 2.
+#title          :2. Services
+#description    :This script tests if some services are on/installed, based on CIS CentOS / RHEL 7 benchmark chapter 2
 #author         :Anttu Suhonen
 #date           :20180524
 #version        :1.0
-#usage          :./servicesCheck
-#notes          :
-#bash_version   :3.2.57(1)-release
+#usage          :./2-services.sh
 #============================================================================
 
-# exec > /services/data/shared_resources/temp/logs/"$(hostname)"_servicesCheck_"$(date)".log
-# exec 2>&1
+exec > ./results/"$(hostname)"_CIS_services_"$(date +%d-%m-%Y)".log
+exec 2>&1
 
 # Functions ------------->
 checkIfEnabled () {
