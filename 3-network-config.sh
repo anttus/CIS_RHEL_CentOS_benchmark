@@ -4,7 +4,7 @@
 #author         :Anttu Suhonen
 #date           :20180524
 #version        :1.0
-#usage          :./3-networking.sh
+#usage          :./3-network-config.sh
 #============================================================================
 
 exec > ./results/"$(hostname)"_CIS_networking_"$(date +%d-%m-%Y)".log
