@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo mkdir ./results
+[ ! -d "./results" ] && mkdir ./results
 sudo sh 2-services.sh
 sudo sh 3-network-config.sh
 sudo sh 4-logging-auditing.sh
