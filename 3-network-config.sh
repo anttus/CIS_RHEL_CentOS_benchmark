@@ -30,7 +30,7 @@ function brLine {
 function summary {
     printf "\\n\\n-------------------- [SUMMARY - 3. Networking configuration] --------------------\\n\\n"
     for (( i = 0; i < ${#titles[@]}; i++ )); do
-        printf "%-75s - %s\\n" "${titles[$i]}" "${results[$i]}"
+        printf "%-90s - %s\\n" "${titles[$i]}" "${results[$i]}"
     done
 }
 
@@ -196,13 +196,13 @@ verifyMatches "net.ipv4.conf.default.log_martians = 1"
 brLine
 
 # 3.2.5 Ensure broadcast ICMP requests are ignored (163)
-title="[3.2.5 Ensure broadcast ICMP requests are ignored (163) ] [CASE 1]"
+title="[3.2.5 Ensure broadcast ICMP requests are ignored (163)] [CASE 1]"
 titles[index++]="$title"
 printf "%s\\n\\n" "$title"
 output="$(sysctl net.ipv4.icmp_echo_ignore_broadcasts)"
 verifyMatches "net.ipv4.icmp_echo_ignore_broadcasts = 1"
 
-title="[3.2.5 Ensure broadcast ICMP requests are ignored (163) ] [/etc/sysctl.conf]"
+title="[3.2.5 Ensure broadcast ICMP requests are ignored (163)] [/etc/sysctl.conf]"
 titles[index++]="$title"
 printf "\\n%s\\n\\n" "$title"
 output="$(grep \"net.ipv4.icmp_echo_ignore_broadcasts\" /etc/sysctl.conf /etc/sysctl.d/*)"
